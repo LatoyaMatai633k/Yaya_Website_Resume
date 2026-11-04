@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Latoya Matai (Yaya) — Software Engineer in Training. Portfolio of projects, hackathon wins, skills, and experience." />
+  <title>Yaya Codes | Latoya Matai — Software Engineer in Training</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%236b1f2e'>Y</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       HEADER / NAV
+  ══════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+
+    <a href="#hero" class="wordmark" aria-label="Yaya Codes — back to top">
+      <img
+        src="yaya-codes-logo.png"
+        alt="Yaya Codes"
+        class="wordmark-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+      />
+      <span class="wordmark-text" style="display:none;">Yaya Codes</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation" id="main-nav">
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about"        class="nav-link">About</a></li>
+        <li><a href="#skills"       class="nav-link">Skills</a></li>
+        <li><a href="#projects"     class="nav-link">Projects</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#experience"   class="nav-link">Experience</a></li>
+        <li><a href="#education"    class="nav-link">Education</a></li>
+        <li><a href="#contact"      class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="main-nav"
+      type="button"
+    >
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Introduction">
+      <div class="hero-inner">
+
+        <!-- Left: text -->
+        <div class="hero-text">
+          <p class="hero-eyebrow">Hi, I'm</p>
+          <h1 class="hero-name">
+            <span class="hero-name-latoya" id="typewriter-target">Latoya Matai</span><span class="hero-cursor" aria-hidden="true">|</span>
+          </h1>
+          <p class="hero-aka-line">also known as <strong class="hero-yaya">Yaya</strong></p>
+          <p class="hero-title">Software Engineer in Training</p>
+          <p class="hero-intro">
+            Studying Software Engineering at <strong>WeThinkCode_</strong> and pursuing a
+            Bachelor's in <strong>Data Science</strong> at IU International University of
+            Applied Sciences, Germany. I build reliable, user-focused software at the
+            intersection of engineering, data, cloud, and AI.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#projects" class="btn btn-primary">Explore my work</a>
+            <a href="#contact"  class="btn btn-outline">Get in touch</a>
+          </div>
+          <div class="hero-badges" aria-label="Hackathon wins">
+            <span class="hero-badge">🏆 Four-Time Hackathon Winner</span>
+          </div>
+        </div>
+
+        <!-- Right: portrait with blended background -->
+        <div class="hero-portrait-col" aria-label="Portrait of Latoya Matai">
+          <div class="hero-portrait-blend">
+            <img
+              src="yaya-photo.jpg"
+              alt="Latoya Matai (Yaya) — Software Engineer in Training"
+              class="hero-portrait"
+              id="hero-portrait"
+              loading="eager"
+              onerror="this.closest('.hero-portrait-blend').classList.add('portrait-missing')"
+            />
+            <!-- Fallback -->
+            <div class="portrait-placeholder" aria-hidden="true">
+              <span class="placeholder-initial">Y</span>
+              <p class="placeholder-note">Add <code>yaya-photo.jpg</code> to the project root</p>
+            </div>
+            <!-- Gradient fade overlay — blends photo into page background -->
+            <div class="portrait-fade-left"   aria-hidden="true"></div>
+            <div class="portrait-fade-bottom" aria-hidden="true"></div>
+          </div>
+
+          <!-- Pose hint -->
+          <p class="pose-hint" aria-label="Future feature: hand-drawn animated pose">
+            <span class="pose-dot" aria-hidden="true"></span>
+            A hand-drawn animated version of Yaya is on its way.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         ABOUT
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 class="section-heading" id="about-heading">About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm Latoya — Yaya to most people. I'm a software engineering student at
+              <strong>WeThinkCode_</strong> in Johannesburg, with a parallel Bachelor's degree
+              in Data Science underway at IU International University of Applied Sciences
+              in Germany.
+            </p>
+            <p>
+              My work spans frontend and full-stack development, with a growing focus on
+              data, cloud, AI, and quality engineering. I enjoy building things that are
+              reliable, accessible, and genuinely useful to people.
+            </p>
+            <p>
+              I've competed at four hackathons and placed at every one — including
+              <strong>2nd place at Africa Hack</strong>, two third-place finishes, and a
+              Community Favorite award. Outside of coding I served as Event Coordinator
+              and Graphic Designer at WeThinkCode_, and I'm part of the
+              <strong>AWS Student Builder Challenge</strong> cohort.
+            </p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number">4</span>
+              <span class="stat-label">Hackathon placements</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">🥈</span>
+              <span class="stat-label">Best finish — 2nd place</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Degrees in progress</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">ZA</span>
+              <span class="stat-label">Johannesburg, South Africa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SKILLS
+    ══════════════════════════════════════════════ -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 class="section-heading" id="skills-heading">Tech Superpowers</h2>
+        <p class="section-sub">Skills grounded in real project work and training.</p>
+
+        <div class="skills-grid">
+
+          <div class="skill-category">
+            <h3 class="skill-cat-title">Programming</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-pill">Python</li>
+              <li class="skill-pill">Java</li>
+              <li class="skill-pill">JavaScript</li>
+              <li class="skill-pill">TypeScript</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-cat-title">Frontend</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-pill">React</li>
+              <li class="skill-pill">HTML</li>
+              <li class="skill-pill">CSS</li>
+              <li class="skill-pill">Tailwind CSS</li>
+              <li class="skill-pill">Responsive UI</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-cat-title">Backend &amp; Data</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-pill">Java Spring Boot</li>
+              <li class="skill-pill">PostgreSQL</li>
+              <li class="skill-pill">SQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-cat-title">Tools &amp; Platforms</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-pill">Git</li>
+              <li class="skill-pill">GitHub</li>
+              <li class="skill-pill">Vercel</li>
+              <li class="skill-pill">AWS</li>
+              <li class="skill-pill">Microsoft Azure</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-cat-title">Practices</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-pill">OOP</li>
+              <li class="skill-pill">API Integration</li>
+              <li class="skill-pill">Testing &amp; Debugging</li>
+              <li class="skill-pill">Version Control</li>
+              <li class="skill-pill">AI Governance</li>
+              <li class="skill-pill">Blockchain (Solana)</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         PROJECTS
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 class="section-heading" id="projects-heading">Projects</h2>
+        <p class="section-sub">
+          My work covers both independent builds and collaborative team projects.
+          Contributions are described honestly.
+        </p>
+
+        <!-- ── Individual Projects ── -->
+        <h3 class="projects-category-heading" id="individual-projects-heading">
+          <span class="projects-category-label">Individual Projects</span>
+        </h3>
+
+        <div class="projects-grid" aria-labelledby="individual-projects-heading">
+
+          <!-- Valentine's Gift Project — FIRST -->
+          <article class="project-card project-card--highlight" aria-labelledby="proj-valentine">
+            <div class="project-header">
+              <span class="project-badge project-badge--solo">Individual</span>
+              <span class="project-status">Personal milestone</span>
+            </div>
+            <h3 class="project-title" id="proj-valentine">Valentine's Gift Project</h3>
+            <p class="project-desc">
+              My first completed personal project — a creative digital gift built entirely
+              by me. A meaningful milestone that marked the start of my independent
+              project-building journey.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="project-footer">
+              <a
+                href="https://github.com/REPLACE-WITH-CORRECT-REPOSITORY"
+                class="project-repo-link"
+                aria-label="GitHub repository for Valentine's Gift Project (placeholder — update URL)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub: Valentine's Gift Project Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Thuso AI -->
+          <article class="project-card" aria-labelledby="proj-thuso">
+            <div class="project-header">
+              <span class="project-badge project-badge--solo">Individual</span>
+              <span class="project-status">Hackathon — placed</span>
+            </div>
+            <h3 class="project-title" id="proj-thuso">Thuso AI</h3>
+            <p class="project-desc">
+              A job-safety support application that accepts job listings, descriptions, or
+              messages and alerts an emergency contact when risk signals are detected.
+              Explores privacy-conscious signals to help identify potentially suspicious
+              recruitment activity.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>AI concepts</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-award">🥉 3rd place — She Builds Friday (Cisco Films) Hackathon</span>
+              <a
+                href="https://github.com/REPLACE-WITH-CORRECT-REPOSITORY"
+                class="project-repo-link"
+                aria-label="GitHub repository for Thuso AI (placeholder — update URL)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub: Thuso AI Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Nurse in Your Pocket -->
+          <article class="project-card project-card--inprogress" aria-labelledby="proj-nurse">
+            <div class="project-header">
+              <span class="project-badge project-badge--solo">Individual</span>
+              <span class="project-status project-status--wip">In development</span>
+            </div>
+            <h3 class="project-title" id="proj-nurse">Nurse in Your Pocket</h3>
+            <p class="project-desc">
+              A health-information companion application currently in development. Focused on
+              accessible, reliable health guidance for everyday questions.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>In progress</li>
+            </ul>
+            <div class="project-footer">
+              <a
+                href="https://github.com/REPLACE-WITH-CORRECT-REPOSITORY"
+                class="project-repo-link"
+                aria-label="GitHub repository for Nurse in Your Pocket (placeholder — update URL)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub: Nurse in Your Pocket Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Yazi Dev -->
+          <article class="project-card" aria-labelledby="proj-yazidev">
+            <div class="project-header">
+              <span class="project-badge project-badge--solo">Individual</span>
+              <span class="project-status">QA focus</span>
+            </div>
+            <h3 class="project-title" id="proj-yazidev">Yazi Dev</h3>
+            <p class="project-desc">
+              A QA and testing-focused project. Details and repository link to be confirmed.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>Testing</li>
+              <li>Debugging</li>
+            </ul>
+            <div class="project-footer">
+              <a
+                href="https://github.com/REPLACE-WITH-CORRECT-REPOSITORY"
+                class="project-repo-link"
+                aria-label="GitHub repository for Yazi Dev (placeholder — update URL)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub: Yazi Dev Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Campus Game Project -->
+          <article class="project-card" aria-labelledby="proj-game">
+            <div class="project-header">
+              <span class="project-badge project-badge--solo">Individual</span>
+              <span class="project-status">Hackathon — placed</span>
+            </div>
+            <h3 class="project-title" id="proj-game">Campus Game Project</h3>
+            <p class="project-desc">
+              A game project entered at the Campus Game Jam hackathon, where it was
+              recognised with the Community Favorite award.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-award">⭐ Community Favorite — Campus Game Jam</span>
+              <a
+                href="https://github.com/REPLACE-WITH-CORRECT-REPOSITORY"
+                class="project-repo-link"
+                aria-label="GitHub repository for Campus Game Project (placeholder — update URL)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub: Game Project Repository
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /.projects-grid individual -->
+
+
+        <!-- ── Team & Collaborative Projects ── -->
+        <h3 class="projects-category-heading projects-category-heading--team" id="team-projects-heading">
+          <span class="projects-category-label projects-category-label--team">Team &amp; Collaborative Projects</span>
+        </h3>
+
+        <div class="projects-grid" aria-labelledby="team-projects-heading">
+
+          <!-- RoyalSquarePortal -->
+          <article class="project-card" aria-labelledby="proj-royalsquare">
+            <div class="project-header">
+              <span class="project-badge project-badge--team">Team project</span>
+              <span class="project-status">Hackathon — placed</span>
+            </div>
+            <h3 class="project-title" id="proj-royalsquare">RoyalSquarePortal</h3>
+            <p class="project-desc">
+              A project built with a team at the Africa Hack hackathon. Achieved 2nd place.
+              Further details and contribution breakdown to be confirmed.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>To be confirmed</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-award">🥈 2nd place — Africa Hack Hackathon</span>
+            </div>
+          </article>
+
+          <!-- KingaPesa -->
+          <article class="project-card" aria-labelledby="proj-kingapesa">
+            <div class="project-header">
+              <span class="project-badge project-badge--team">Team project</span>
+              <span class="project-status">Hackathon — placed</span>
+            </div>
+            <h3 class="project-title" id="proj-kingapesa">KingaPesa</h3>
+            <p class="project-desc">
+              A project developed with a team at the Mukuru x WeThinkCode_ SheCodes
+              Hackathon. Achieved 3rd place. Further details and contribution breakdown
+              to be confirmed.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>To be confirmed</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-award">🥉 3rd place — Mukuru x WeThinkCode_ SheCodes Hackathon</span>
+            </div>
+          </article>
+
+          <!-- OriginLock -->
+          <article class="project-card" aria-labelledby="proj-originlock">
+            <div class="project-header">
+              <span class="project-badge project-badge--team">Team project</span>
+              <span class="project-status">Deployed to Vercel</span>
+            </div>
+            <h3 class="project-title" id="proj-originlock">OriginLock</h3>
+            <p class="project-desc">
+              A full-stack idea protection platform built as a group project at WeThinkCode_.
+              Yaya contributed to the blockchain component and led most of the frontend
+              implementation. Deployed to Vercel.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>Solana</li>
+              <li>Anchor</li>
+              <li>Rust</li>
+              <li>Spring Boot</li>
+              <li>PostgreSQL</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </article>
+
+          <!-- SentinelOPS -->
+          <article class="project-card" aria-labelledby="proj-sentinel">
+            <div class="project-header">
+              <span class="project-badge project-badge--team">Collaborative</span>
+              <span class="project-status">Completed</span>
+            </div>
+            <h3 class="project-title" id="proj-sentinel">SentinelOPS</h3>
+            <p class="project-desc">
+              An AI governance dashboard developed in a WeThinkCode_ work-simulated software
+              delivery environment. Yaya developed a responsive React dashboard presenting
+              enterprise AI governance information in a structured interface.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Responsive UI</li>
+              <li>AI Governance</li>
+            </ul>
+          </article>
+
+          <!-- Fuso -->
+          <article class="project-card" aria-labelledby="proj-fuso">
+            <div class="project-header">
+              <span class="project-badge project-badge--team">Team project</span>
+              <span class="project-status">Hackathon — placed</span>
+            </div>
+            <h3 class="project-title" id="proj-fuso">Fuso</h3>
+            <p class="project-desc">
+              A project developed with a team at the Cisco Films hackathon. Achieved 3rd place.
+              Further details and contribution breakdown to be confirmed.
+            </p>
+            <ul class="project-tech" aria-label="Technologies used" role="list">
+              <li>To be confirmed</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-award">🥉 3rd place — Cisco Films Hackathon</span>
+            </div>
+          </article>
+
+        </div><!-- /.projects-grid team -->
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         ACHIEVEMENTS
+    ══════════════════════════════════════════════ -->
+    <section class="section section-alt" id="achievements" aria-labelledby="achievements-heading">
+      <div class="container">
+        <h2 class="section-heading" id="achievements-heading">Achievements</h2>
+        <p class="section-sub achievements-sub">
+          <strong>Four-Time Hackathon Winner</strong> — placed at every competition entered.
+        </p>
+
+        <div class="achievements-list">
+
+          <div class="achievement-card">
+            <div class="achievement-icon achievement-icon--gold" aria-hidden="true">🥈</div>
+            <div class="achievement-body">
+              <h3 class="achievement-title">2nd Place — Africa Hack Hackathon</h3>
+              <p class="achievement-project">Project: <strong>RoyalSquarePortal</strong></p>
+              <p class="achievement-desc">
+                Competed as part of a team and secured second place at the Africa Hack
+                hackathon with RoyalSquarePortal.
+              </p>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon" aria-hidden="true">🥉</div>
+            <div class="achievement-body">
+              <h3 class="achievement-title">3rd Place — Mukuru x WeThinkCode_ SheCodes Hackathon</h3>
+              <p class="achievement-project">Project: <strong>KingaPesa</strong></p>
+              <p class="achievement-desc">
+                Competed as part of a team and secured third place at the Mukuru x
+                WeThinkCode_ SheCodes Hackathon with KingaPesa.
+              </p>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon" aria-hidden="true">🥉</div>
+            <div class="achievement-body">
+              <h3 class="achievement-title">3rd Place — Cisco Films Hackathon</h3>
+              <p class="achievement-project">Project: <strong>Fuso</strong></p>
+              <p class="achievement-desc">
+                Competed as part of a team and secured third place at the Cisco Films
+                hackathon with Fuso.
+              </p>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon" aria-hidden="true">⭐</div>
+            <div class="achievement-body">
+              <h3 class="achievement-title">Community Favorite — Campus Game Jam</h3>
+              <p class="achievement-project">Project: <strong>Campus Game Project</strong></p>
+              <p class="achievement-desc">
+                Recognised with the Community Favorite award at the Campus Game Jam
+                hackathon for the independently built game project.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         EXPERIENCE TIMELINE
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <h2 class="section-heading" id="experience-heading">Experience &amp; Volunteering</h2>
+
+        <div class="timeline" id="timeline" aria-label="Professional experience timeline">
+          <div class="timeline-track" aria-hidden="true">
+            <div class="timeline-fill" id="timeline-fill"></div>
+          </div>
+
+          <div class="timeline-entries">
+
+            <article class="timeline-entry" aria-labelledby="te-swe">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2025-09/2026-12">Sep 2025 – Dec 2026</time>
+                <h3 class="timeline-role" id="te-swe">Software Engineer in Training</h3>
+                <p class="timeline-org">WeThinkCode_ <span class="timeline-tag">In progress</span></p>
+                <p class="timeline-desc">
+                  Participating in a project-based, work-simulated software engineering programme
+                  alongside studies. Applying programming fundamentals and OOP to structured
+                  projects; using version control; collaborating on software delivery; and
+                  developing knowledge through practical work and independent study of cloud
+                  and AI fundamentals.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-entry" aria-labelledby="te-events">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2025-09/2026-08">Sep 2025 – Aug 2026</time>
+                <h3 class="timeline-role" id="te-events">Event Coordinator &amp; Graphic Designer</h3>
+                <p class="timeline-org">WeThinkCode_ <span class="timeline-tag timeline-tag--vol">Volunteer</span></p>
+                <p class="timeline-desc">
+                  Designed event graphics and coordinated logistics for campus events,
+                  demonstrating organisation, communication, and teamwork alongside
+                  software engineering studies.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-entry" aria-labelledby="te-bakers">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2024-07/2025-09">Jul 2024 – Sep 2025</time>
+                <h3 class="timeline-role" id="te-bakers">Social Media Marketing Specialist</h3>
+                <p class="timeline-org">The Bakers Warehouse</p>
+                <p class="timeline-desc">Managed social media content and marketing activity for the business.</p>
+              </div>
+            </article>
+
+            <article class="timeline-entry" aria-labelledby="te-nova">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2023-06/2023-09">Jun 2023 – Sep 2023</time>
+                <h3 class="timeline-role" id="te-nova">Lead Generator</h3>
+                <p class="timeline-org">Nova Connect</p>
+                <p class="timeline-desc">Identified potential clients through proactive outreach and built professional customer relationships.</p>
+              </div>
+            </article>
+
+            <article class="timeline-entry" aria-labelledby="te-lawson">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2023-02/2023-06">Feb 2023 – Jun 2023</time>
+                <h3 class="timeline-role" id="te-lawson">Sales Consultant</h3>
+                <p class="timeline-org">Lawson Direct Channel</p>
+                <p class="timeline-desc">Handled customer queries, provided tailored assistance, and supported customer engagement through sales and canvassing.</p>
+              </div>
+            </article>
+
+            <article class="timeline-entry" aria-labelledby="te-houghton">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2022-09/2023-02">Sep 2022 – Feb 2023</time>
+                <h3 class="timeline-role" id="te-houghton">Spa Receptionist / Receptionist Assistant</h3>
+                <p class="timeline-org">The Houghton Hotel, Spa, Wellness and Golf</p>
+                <p class="timeline-desc">Supported front-of-house operations and assisted with customer service.</p>
+              </div>
+            </article>
+
+            <article class="timeline-entry" aria-labelledby="te-bakery">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2019-12/2020-01">Dec 2019 – Jan 2020</time>
+                <h3 class="timeline-role" id="te-bakery">Baker</h3>
+                <p class="timeline-org">Innovative Pans Bakery</p>
+                <p class="timeline-desc">Managed customer orders and deliveries, handled cashier duties, and supported efficient daily operations.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         EDUCATION & TRAINING
+    ══════════════════════════════════════════════ -->
+    <section class="section section-alt" id="education" aria-labelledby="education-heading">
+      <div class="container">
+        <h2 class="section-heading" id="education-heading">Education &amp; Training</h2>
+
+        <div class="edu-grid">
+
+          <div class="edu-card edu-card--inprogress">
+            <span class="edu-status">In progress</span>
+            <h3 class="edu-title">Bachelor's Degree in Data Science</h3>
+            <p class="edu-institution">IU International University of Applied Sciences, Germany</p>
+          </div>
+
+          <div class="edu-card edu-card--inprogress">
+            <span class="edu-status">In progress</span>
+            <h3 class="edu-title">Computer Software Engineering Programme</h3>
+            <p class="edu-institution">WeThinkCode_</p>
+            <p class="edu-date">September 2025 – December 2026</p>
+          </div>
+
+          <div class="edu-card">
+            <h3 class="edu-title">Digital Marketing and SEO</h3>
+            <p class="edu-institution">Afrika Tikkun</p>
+            <p class="edu-date">2022 – 2023</p>
+          </div>
+
+          <div class="edu-card">
+            <h3 class="edu-title">National Senior Certificate (Matric)</h3>
+            <p class="edu-institution">Lavela Secondary School — Physical Sciences</p>
+            <p class="edu-date">2021</p>
+          </div>
+
+        </div>
+
+        <h3 class="subsection-heading">Certifications &amp; Professional Development</h3>
+        <p class="section-sub">
+          Completed training is listed first. Exam preparation in progress is noted separately — these are not yet completed certifications.
+        </p>
+
+        <ul class="cert-list" role="list">
+          <li class="cert-item cert-item--done">
+            <span class="cert-provider">Cisco</span>
+            Introduction to Data Science
+          </li>
+          <li class="cert-item cert-item--done">
+            <span class="cert-provider">Completed</span>
+            Introduction to Data Engineering
+          </li>
+          <li class="cert-item cert-item--done">
+            <span class="cert-provider">Completed</span>
+            Understanding Data Engineering
+          </li>
+          <li class="cert-item cert-item--done">
+            <span class="cert-provider">Redeem Code</span>
+            Generative AI
+          </li>
+          <li class="cert-item cert-item--done">
+            <span class="cert-provider">Accenture</span>
+            Understanding Technology: Cloud
+          </li>
+          <li class="cert-item cert-item--done">
+            <span class="cert-provider">Atingi / GIZ</span>
+            Digital Safety and Security
+          </li>
+          <li class="cert-item cert-item--done">
+            <span class="cert-provider">SheCodes</span>
+            SheCodes Basics
+          </li>
+          <li class="cert-item cert-item--prep">
+            <span class="cert-provider cert-provider--prep">Preparing</span>
+            AWS re/Start — cloud training; preparing for AWS Certified Cloud Practitioner exam
+          </li>
+          <li class="cert-item cert-item--prep">
+            <span class="cert-provider cert-provider--prep">Preparing</span>
+            Microsoft Azure AI-900 — exam preparation in progress, not yet certified
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         CONTACT
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-container">
+        <h2 class="section-heading" id="contact-heading">Get In Touch</h2>
+        <p class="contact-intro">
+          I'm open to opportunities, collaborations, and conversations about software,
+          data, and cloud. Reach out via email or LinkedIn.
+        </p>
+
+        <div class="contact-links">
+          <a
+            href="mailto:latoyamatai0615@gmail.com"
+            class="contact-link"
+            aria-label="Send an email to Latoya Matai"
+          >
+            <span class="contact-icon" aria-hidden="true">✉️</span>
+            <span class="contact-label">latoyamatai0615@gmail.com</span>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/latoya-matai"
+            class="contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Latoya Matai's LinkedIn profile (opens in new tab)"
+          >
+            <span class="contact-icon" aria-hidden="true">💼</span>
+            <span class="contact-label">linkedin.com/in/latoya-matai</span>
+          </a>
+        </div>
+
+        <p class="contact-cv-note">
+          Want my CV?
+          <a href="mailto:latoyamatai0615@gmail.com" class="inline-link">Request it by email</a> —
+          I'll send the latest version directly.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <img
+        src="yaya-codes-logo.png"
+        alt="Yaya Codes"
+        class="footer-logo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+      />
+      <span class="footer-wordmark-fallback" style="display:none;">Yaya Codes</span>
+      <p class="footer-tagline">Software Engineer in Training · Johannesburg, South Africa</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="https://linkedin.com/in/latoya-matai" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:latoyamatai0615@gmail.com">Email</a>
+        <a href="#hero">Back to top</a>
+      </nav>
+      <p class="footer-legal">Built with HTML, CSS &amp; JavaScript · Deployed on AWS Amplify</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
