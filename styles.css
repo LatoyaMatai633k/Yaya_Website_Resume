@@ -684,6 +684,21 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   gap: 1.35rem;
 }
 
+/* Team section: force 3 equal columns on desktop so all three cards align */
+.projects-grid--team-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 960px) {
+  .projects-grid--team-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .projects-grid--team-three {
+    grid-template-columns: 1fr;
+  }
+}
+
 .project-card {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
@@ -945,11 +960,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .edu-card {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
+  border-top: 3px solid var(--clr-burg);   /* burgundy top line on ALL cards */
   border-radius: var(--radius-md);
   padding: 1.15rem 1.25rem;
   box-shadow: var(--shadow-sm);
 }
-.edu-card--inprogress { border-top: 3px solid var(--clr-burg); }
+.edu-card--inprogress { border-top-color: var(--clr-burg); /* already set — keeps consistency */ }
 
 .edu-status {
   font-size: 0.68rem;

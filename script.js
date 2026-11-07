@@ -234,6 +234,7 @@
    No paid API is called.
 ──────────────────────────────────────────────────────── */
 (function initYayaAssistant() {
+  var API_URL = 'http://127.0.0.1:8000'; // tomorrow: your deployed backend URL
   var launcher     = document.getElementById('yaya-launcher');
   var panel        = document.getElementById('yaya-panel');
   var closeBtn     = document.getElementById('yaya-panel-close');
@@ -288,7 +289,7 @@
     "I'll be able to answer your questions in detail once it is. " +
     "In the meantime, feel free to browse my portfolio or reach out via email or LinkedIn.";
 
-  /* ── Handle sending a message ── */
+    /* ── Handle sending a message ── */
   function sendMessage() {
     var text = input.value.trim();
     if (!text) return;
@@ -299,10 +300,24 @@
     addMessage(text, 'user');
     input.value = '';
 
-    /* Simulate a short typing pause then respond */
-    setTimeout(function () {
-      addMessage(holdingResponse, 'assistant');
-    }, 700);
+    addMessage('Typing...', 'assistant');
+    var typingEl = messages.lastElementChild;
+
+    fetch(API_URL + '/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: text })
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        typingEl.querySelector('p').textContent = data.success
+          ? data.answer
+          : "I can't answer that right now. Please try again in a moment.";
+      })
+      .catch(function () {
+        typingEl.querySelector('p').textContent = "I can't reach my brain right now. Please try again in a moment.";
+      })
+      .finally(function () { messages.scrollTop = messages.scrollHeight; });
   }
 
   sendBtn.addEventListener('click', sendMessage);
