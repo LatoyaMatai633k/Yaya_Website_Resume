@@ -67,22 +67,34 @@ When your final CV PDF is ready:
 - Full responsive layout - mobile, tablet, desktop
 - Full-screen mobile navigation overlay (hamburger button, Escape key, link-close)
 - All 8 navigation links scroll to correct sections
-- Two-column hero: text left, portrait fills right half to viewport edge with gradient blend
-- Hero name centered on mobile (and all supporting text)
-- Typewriter animation on hero name at relaxed pace
-- Count-up animation on About stats (4 hackathon placements, 2 degrees) - triggers on scroll
+- Two-column hero: text left, hand-drawn video right (full 3:4 frame, contain, no cropping)
+- Hero video autoplays, loops, muted, plays inline on mobile; click-to-play fallback if browser blocks autoplay
+- Download CV button in hero and contact section (links to latoya-resume.pdf)
+- Hero name centered on mobile; typewriter at 140ms per character
+- Count-up stats in About section replay every time section enters viewport (scrolling down or up)
 - Scroll-progressive burgundy timeline fill
 - Fade-up entrance animations on cards
 - Active nav highlight follows scroll
 - Header shadow on scroll
-- Logo (yaya-codes-logo.png) displayed in header (top-left) and footer
-- Yaya assistant launcher fixed in bottom-right corner
-- Assistant panel opens/closes, shows greeting, suggested questions, input, send button
-- Suggested questions populate input and auto-send on click
-- Assistant gives honest holding response until knowledge base is connected
-- Escape key closes assistant panel
+- Logo (yaya-codes-logo.png) in header (top-left) and footer
+- Yaya assistant launcher fixed bottom-right; opens/closes panel, greeting, suggested questions, send
 - `prefers-reduced-motion` respected throughout
 - Keyboard focus states, ARIA labels, semantic HTML throughout
+- Email and LinkedIn links functional
+
+## Items needing your input
+
+| Item | Action needed |
+|---|---|
+| **Valentine's Gift Project** | Replace `REPLACE-WITH-CORRECT-REPOSITORY` with actual URL |
+| **Thuso AI** (hackathon version) | Replace link placeholder with actual URL |
+| **Thuso AI** (data platform extension) | Replace link placeholder with actual URL |
+| **Nurse in Your Pocket** | Replace link placeholder with actual URL |
+| **Yazi Dev** | Replace link placeholder + confirm description |
+| **Campus Game Project** | Replace link placeholder with actual URL |
+| **RoyalSquarePortal** | Confirm tech stack and contribution details |
+| **KingaPesa** | Confirm tech stack and contribution details |
+| **Yaya assistant RAG** | Connect knowledge base (next phase) |
 
 ---
 

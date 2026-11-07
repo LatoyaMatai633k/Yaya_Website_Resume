@@ -149,8 +149,8 @@
   target.textContent = '';
 
   var i = 0;
-  /* 110ms per character — relaxed, readable pace */
-  var speed = 110;
+  /* 140ms per character - slow and readable */
+  var speed = 140;
 
   function type() {
     if (i < fullText.length) {
@@ -158,61 +158,67 @@
       i++;
       setTimeout(type, speed);
     } else {
-      /* Hide blinking cursor 1.5s after name completes */
+      /* Keep cursor visible for 2s then hide it */
       setTimeout(function () {
         if (cursor) cursor.style.display = 'none';
-      }, 1500);
+      }, 2000);
     }
   }
 
-  /* Short delay so page has settled before animation starts */
-  setTimeout(type, 500);
+  /* 600ms delay so page load settles before animation */
+  setTimeout(type, 600);
 })();
 
 
-/* ── 7. Count-up animation for About stats ──────────────── */
+/* ── 7. Count-up animation for About stats (replays on re-entry) ── */
 (function initCountUp() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  /* Only targets elements with data-count attribute */
   var counters = document.querySelectorAll('.stat-number[data-count]');
   if (!counters.length) return;
 
-  var duration = 1200; /* ms for the full count */
+  var duration = 1100; /* ms */
 
   function animateCounter(el) {
-    var target  = parseInt(el.getAttribute('data-count'), 10);
-    var start   = 0;
+    var target    = parseInt(el.getAttribute('data-count'), 10);
     var startTime = null;
+    /* Cancel any previous animation frame */
+    if (el._rafId) cancelAnimationFrame(el._rafId);
 
     function step(timestamp) {
       if (!startTime) startTime = timestamp;
       var elapsed  = timestamp - startTime;
       var progress = Math.min(elapsed / duration, 1);
-      /* Ease-out: decelerates toward the end */
+      /* Ease-out cubic */
       var eased    = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.round(eased * target);
       if (progress < 1) {
-        requestAnimationFrame(step);
+        el._rafId = requestAnimationFrame(step);
       } else {
         el.textContent = target;
+        el._rafId = null;
       }
     }
 
-    requestAnimationFrame(step);
+    el._rafId = requestAnimationFrame(step);
   }
 
-  var observer = new IntersectionObserver(function (entries, obs) {
+  /* Use IntersectionObserver WITHOUT unobserve so it fires every scroll entry */
+  var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
+        /* Animate in: count up from 0 */
         animateCounter(entry.target);
-        obs.unobserve(entry.target); /* run only once */
+      } else {
+        /* Reset to 0 when scrolled out so it replays on next entry */
+        if (entry.target._rafId) cancelAnimationFrame(entry.target._rafId);
+        entry.target._rafId = null;
+        entry.target.textContent = '0';
       }
     });
   }, { threshold: 0.5 });
 
   counters.forEach(function (el) {
-    /* Start display at 0 until visible */
     el.textContent = '0';
     observer.observe(el);
   });
@@ -316,6 +322,41 @@
         input.focus();
         sendMessage();
       });
+    });
+  }
+})();
+
+
+/* ── 9. Hero video: autoplay fallback ───────────────────
+   If browser blocks autoplay (uncommon for muted video),
+   show a subtle play overlay so the visitor can start it.
+──────────────────────────────────────────────────────── */
+(function initVideoFallback() {
+  var video = document.getElementById('hero-video');
+  if (!video) return;
+
+  var playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function () {
+      /* Autoplay blocked - add click-to-play overlay */
+      var col = video.closest('.hero-portrait-col');
+      if (!col) return;
+
+      var overlay = document.createElement('button');
+      overlay.className = 'video-play-overlay';
+      overlay.setAttribute('aria-label', 'Play Yaya portrait animation');
+      overlay.innerHTML =
+        '<svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">' +
+        '<circle cx="24" cy="24" r="22" fill="rgba(250,249,247,0.88)" stroke="none"/>' +
+        '<path d="M19 16l14 8-14 8V16z" fill="#6b1f2e"/>' +
+        '</svg>';
+
+      overlay.addEventListener('click', function () {
+        video.play();
+        overlay.remove();
+      });
+
+      col.appendChild(overlay);
     });
   }
 })();

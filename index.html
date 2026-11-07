@@ -80,31 +80,35 @@
         <div class="hero-cta-row">
           <a href="#projects" class="btn btn-primary">Explore my work</a>
           <a href="#contact"  class="btn btn-outline">Get in touch</a>
+          <a
+            href="latoya-resume.pdf"
+            class="btn btn-cv btn-cv--hero"
+            download="Latoya-Matai-CV.pdf"
+            aria-label="Download Latoya Matai's CV"
+          >Download CV</a>
         </div>
       </div>
 
-      <!-- Right half: portrait fills to edge, gradient blends left -->
-      <div class="hero-portrait-col" aria-label="Portrait of Latoya Matai">
-        <img
-          src="yaya-photo.jpg"
-          alt="Latoya Matai (Yaya) - Software Engineer in Training"
-          class="hero-portrait"
-          id="hero-portrait"
-          loading="eager"
-          onerror="this.closest('.hero-portrait-col').classList.add('portrait-missing')"
-        />
-        <!-- Left-edge gradient: blends portrait into warm-white background -->
+      <!-- Right half: hand-drawn portrait video, full 3:4 frame, contain -->
+      <div class="hero-portrait-col" aria-label="Animated portrait of Latoya Matai">
+        <video
+          class="hero-video"
+          id="hero-video"
+          src="yaya-pose.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+          aria-label="Hand-drawn animated portrait of Latoya Matai"
+        >
+          <!-- Fallback for browsers that cannot autoplay -->
+          <p>Your browser does not support this video.
+             <a href="yaya-pose.mp4">Download the video</a> to view it.
+          </p>
+        </video>
+        <!-- Left-edge gradient blends video into warm-white background -->
         <div class="portrait-fade-left" aria-hidden="true"></div>
-        <!-- Fallback when photo file is missing -->
-        <div class="portrait-placeholder" aria-hidden="true">
-          <span class="placeholder-initial">Y</span>
-          <p class="placeholder-note">Add <code>yaya-photo.jpg</code> to the project root</p>
-        </div>
-        <!-- Future animated pose hint -->
-        <p class="pose-hint" aria-label="Future feature: hand-drawn animated pose">
-          <span class="pose-dot" aria-hidden="true"></span>
-          A hand-drawn animated version of Yaya is on its way.
-        </p>
       </div>
 
     </section>
@@ -766,23 +770,15 @@
           </a>
         </div>
 
-        <!--
-          CV DOWNLOAD BUTTON
-          When your final CV PDF is ready, save it as: yaya-cv.pdf
-          in the same folder as index.html, then change the href below to: href="yaya-cv.pdf"
-          and add the download attribute: download="Latoya-Matai-CV.pdf"
-        -->
         <div class="cv-download-wrap">
           <a
-            href="#"
+            href="latoya-resume.pdf"
             class="btn btn-cv"
-            aria-label="Download CV - file not yet available"
-            aria-disabled="true"
-            onclick="return false;"
+            download="Latoya-Matai-CV.pdf"
+            aria-label="Download Latoya Matai's CV"
           >
             Download CV
           </a>
-          <p class="cv-note">CV file coming soon. Add <code>yaya-cv.pdf</code> to the project root and update the button href.</p>
         </div>
 
       </div>
@@ -878,7 +874,7 @@
     </div>
 
     <p class="yaya-disclaimer">
-      Yaya's knowledge base is coming soon. Full answers will be available once connected.
+      Yaya's AI knowledge base is being connected. Full conversational answers are coming soon.
     </p>
   </div>
 
