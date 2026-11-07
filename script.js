@@ -234,7 +234,7 @@
    No paid API is called.
 ──────────────────────────────────────────────────────── */
 (function initYayaAssistant() {
-  var API_URL = 'http://127.0.0.1:8000'; // tomorrow: your deployed backend URL
+  var API_URL = 'https://d3fko1qbzwrzo6.cloudfront.net';
   var launcher     = document.getElementById('yaya-launcher');
   var panel        = document.getElementById('yaya-panel');
   var closeBtn     = document.getElementById('yaya-panel-close');
